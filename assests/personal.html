@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday My Love</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom, #fff0f3, #fdf6f0);
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+              url('https://images.unsplash.com/photo-1518199266791-5375a83190b7');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-family: 'Playfair Display', serif;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* BUTTON */
+.music-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* SECTIONS */
+section {
+  padding: 70px 20px;
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+}
+
+/* LOVE GRID */
+.love-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.love-item {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* GALLERY */
+.gallery img {
+  width: 100%;
+  border-radius: 15px;
+  margin: 10px 0;
+}
+
+/* LETTER */
+.letter {
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: left;
+  line-height: 1.7;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* HEARTS */
+.heart {
+  position: fixed;
+  bottom: 0;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+</audio>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>Happy Birthday, My Love ❤️</h1>
+    <p>You are my happiness, always.</p>
+    <button class="music-btn" onclick="toggleMusic()">Play Music 🎵</button>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section>
+  <h2>About You</h2>
+  <p>You are everything I ever wished for. Loving, kind, and amazing in every way.</p>
+</section>
+
+<!-- 33 THINGS -->
+<section>
+  <h2>33 Things I Love About You</h2>
+  <div class="love-list">
+    <div class="love-item">1. Your smile</div>
+    <div class="love-item">2. Your kindness</div>
+    <div class="love-item">3. Your voice</div>
+    <div class="love-item">4. Your hugs</div>
+    <div class="love-item">5. Your laughter</div>
+    <div class="love-item">6. Your strength</div>
+    <div class="love-item">7. Your honesty</div>
+    <div class="love-item">8. Your patience</div>
+    <div class="love-item">9. Your love</div>
+    <div class="love-item">10. Your energy</div>
+    <div class="love-item">11. Your support</div>
+    <div class="love-item">12. Your presence</div>
+    <div class="love-item">13. Your calmness</div>
+    <div class="love-item">14. Your intelligence</div>
+    <div class="love-item">15. Your jokes</div>
+    <div class="love-item">16. Your eyes</div>
+    <div class="love-item">17. Your warmth</div>
+    <div class="love-item">18. Your style</div>
+    <div class="love-item">19. Your confidence</div>
+    <div class="love-item">20. Your loyalty</div>
+    <div class="love-item">21. Your effort</div>
+    <div class="love-item">22. Your positivity</div>
+    <div class="love-item">23. Your dreams</div>
+    <div class="love-item">24. Your heart</div>
+    <div class="love-item">25. Your cuddles</div>
+    <div class="love-item">26. Your voice notes</div>
+    <div class="love-item">27. Your vibe</div>
+    <div class="love-item">28. Your patience with me</div>
+    <div class="love-item">29. Your ambition</div>
+    <div class="love-item">30. Your everything</div>
+    <div class="love-item">31. The way you love me</div>
+    <div class="love-item">32. Just being you</div>
+    <div class="love-item">33. YOU ❤️</div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section>
+  <h2>Our Memories 📸</h2>
+  <div class="gallery">
+    <img src="https://via.placeholder.com/400">
+    <img src="https://via.placeholder.com/400">
+    <img src="https://via.placeholder.com/400">
+  </div>
+</section>
+
+<!-- LETTER -->
+<section>
+  <h2>My Love Letter 💌</h2>
+  <div class="letter" id="letter"></div>
+</section>
+
+<!-- FOOTER -->
+<section>
+  <h2>Happy Birthday ❤️</h2>
+  <p>May your life be filled with happiness, love, and success. I love you forever.</p>
+</section>
+
+<script>
+// MUSIC
+function toggleMusic() {
+  const music = document.getElementById("music");
+  if (music.paused) {
+    music.play();
+  } else {
+    music.pause();
+  }
+}
+
+// SCROLL ANIMATION
+const sections = document.querySelectorAll("section");
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.classList.add("show");
+    }
+  });
+});
+
+// TYPING EFFECT
+const text = `My love,
+
+On your birthday, I just want to remind you how special you are to me.
+You are my joy, my peace, and my greatest blessing.
+
+Every moment with you means everything to me, and I’m so grateful
+to walk through life with you.
+
+I pray this year brings you happiness, success, and everything
+your heart desires.
+
+Happy Birthday, my love ❤️`;
+
+let i = 0;
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("letter").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 30);
+  }
+}
+typeWriter();
+
+// HEARTS
+function createHeart() {
+  const heart = document.createElement("div");
+  heart.classList.add("heart");
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 10 + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}
+setInterval(createHeart, 400);
+</script>
+
+</body>
+</html>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
