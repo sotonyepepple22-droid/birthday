@@ -83,6 +83,7 @@
       #dots.visible {
         opacity: 1;
       }
+      /* https://sotonyepepple22-droid.github.io/birthday/ */
       .dot {
         width: 8px;
         height: 8px;
@@ -597,62 +598,6 @@
         font-size: 1rem;
       }
 
-      /* ─── CH 4: VIDEO ─── */
-      #ch4 {
-        background: #050204;
-      }
-      .video-wrap {
-        width: 100%;
-        max-width: 800px;
-        position: relative;
-        box-shadow: 0 0 80px rgba(212, 165, 116, 0.12);
-      }
-      .video-wrap::before,
-      .video-wrap::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        height: 60px;
-        z-index: 2;
-        pointer-events: none;
-      }
-      .video-wrap::before {
-        top: 0;
-        background: linear-gradient(rgba(5, 2, 4, 0.7), transparent);
-      }
-      .video-wrap::after {
-        bottom: 0;
-        background: linear-gradient(transparent, rgba(5, 2, 4, 0.7));
-      }
-      .video-wrap video,
-      .video-placeholder {
-        width: 100%;
-        aspect-ratio: 16/9;
-        display: block;
-        background: #0a0506;
-      }
-      .video-placeholder {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 1rem;
-        font-family: var(--serif);
-        color: var(--gold-dim);
-      }
-      .video-placeholder .play-icon {
-        font-size: 3rem;
-      }
-      #ch4 .section-title {
-        font-family: var(--accent);
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
-        color: var(--gold);
-        letter-spacing: 0.2em;
-        margin-bottom: 1.5rem;
-        text-align: center;
-      }
-
       /* ─── CH 5: LETTER ─── */
       #ch5 {
         background: radial-gradient(ellipse at center, #200812 0%, #0a0506 70%);
@@ -856,7 +801,7 @@
         <div class="dot" data-ch="1" title="Greeting"></div>
         <div class="dot" data-ch="2" title="Our Story"></div>
         <div class="dot" data-ch="3" title="The Album"></div>
-        <div class="dot" data-ch="4" title="Video Message"></div>
+        <!-- <div class="dot" data-ch="4" title="Video Message"></div> -->
         <div class="dot" data-ch="5" title="Love Letter"></div>
         <div class="dot" data-ch="6" title="Make a Wish"></div>
       </div>
@@ -923,7 +868,7 @@
         <div class="album-container" id="album-container"></div>
         <div
           class="next-btn"
-          onclick="goToChapter(4)"
+          onclick="goToChapter(5)"
           style="
             width: 100%;
             display: flex;
@@ -943,17 +888,6 @@
         <img id="lb-img" src="" alt="" />
         <div class="lb-caption" id="lb-caption"></div>
       </div>
-
-      <!-- ═══ CH 4: VIDEO ═══ -->
-      <section class="chapter" id="ch4">
-        <div class="section-title">A Message for You</div>
-        <div class="video-wrap" id="video-wrap"></div>
-        <!-- <video controls width="600px" height="600px" src="./assests/Diablo_480P.mp4"></video> -->
-        <div class="next-btn" onclick="goToChapter(5)">
-          <span>Open the next moment</span>
-          <div class="chevron">❧</div>
-        </div>
-      </section>
 
       <!-- ═══ CH 5: LETTER ═══ -->
       <section class="chapter" id="ch5">
@@ -1034,11 +968,11 @@
         ],
         photos: [
           {
-            src: "./assests/IMG_E7369.JPG",
+            src: "./assests/curl.png",
             caption: "The look that started everything.",
           },
           {
-            src: "./assests/2nd.JPG",
+            src: "./assests/fine.jpg",
             caption: "Your laughter, my favourite sound.",
           },
           {
@@ -1049,7 +983,10 @@
             src: "./assests/5th.jpg",
             caption: "Caught mid-thought,still my favourite view.",
           },
-          { src: "", caption: "Where we belong — together." },
+          {
+            src: "./assests/IMG_E2817.JPG",
+            caption: "Where we belong together.",
+          },
           {
             src: "./assests/last.JPG",
             caption: "Every day with you is a gift.",
@@ -1321,16 +1258,6 @@
         document.getElementById("lightbox").classList.remove("open");
       }
 
-      /* ═══════════════════ CH 4: VIDEO ═══════════════════ */
-      function buildVideo() {
-        const wrap = document.getElementById("video-wrap");
-        if (CONFIG.video.url) {
-          wrap.innerHTML = `<video controls ${CONFIG.video.poster ? `poster="${CONFIG.video.poster}"` : ""} style="width:100%;aspect-ratio:16/9;display:block;"><source src="${CONFIG.video.url}">Your browser does not support video.</video>`;
-        } else {
-          wrap.innerHTML = `<div class="video-placeholder"><div class="play-icon">▶</div><div style="font-family:var(--serif);font-style:italic;color:var(--gold-dim);font-size:1rem;">Your video message will appear here<br><small style="font-size:0.8rem;opacity:0.6;">Add video.url to the config</small></div></div>`;
-        }
-      }
-
       /* ═══════════════════ CH 5: LETTER ═══════════════════ */
       let letterTyping = false;
       function startLetter() {
@@ -1525,7 +1452,6 @@
           setTimeout(revealTimeline, 300);
         }
         if (n === 3) buildAlbum();
-        if (n === 4) buildVideo();
         if (n === 5) setTimeout(startLetter, 500);
         if (n === 6) buildCake();
       }
